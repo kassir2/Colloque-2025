@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+
 export default function Inscription() {
   const [formData, setFormData] = useState({
     nom: '',
@@ -37,7 +38,7 @@ export default function Inscription() {
       );
   };
 
-
+/* 
   return (
     
     <div className="min-h-screen bg-gray-50 px-6 py-12 md:px-24">
@@ -89,5 +90,34 @@ export default function Inscription() {
       )}
     </div>
   );
+} */
+
+  return (
+  <div className="min-h-screen bg-gray-50 px-6 py-12 md:px-24">
+    <h1 className="text-3xl font-bold text-center text-indigo-700 mb-8">
+      Inscription au Colloque INCLUSIA 2025
+    </h1>
+
+    <div className="max-w-xl mx-auto bg-white p-8 rounded shadow-md space-y-6">
+      {submitted ? (
+        <div className="text-center text-green-600 font-semibold">
+          ✅ Merci pour votre inscription ! Vous recevrez un email de confirmation.
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* tous les champs ici comme tu les as */}
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-indigo-600 text-white py-3 rounded hover:bg-indigo-700 transition duration-200"
+          >
+            S'inscrire
+          </button>
+        </form>
+      )}
+    </div>
+  </div>
+);
 }
 
